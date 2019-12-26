@@ -5,5 +5,5 @@
  * @link https://github.com/skylark-integration/skylark-zxcvbn/
  * @license MIT
  */
-var feedback,matching,scoring,time,time_estimates,zxcvbn;matching=require("./matching"),define(["./time_estimates","./feedback","./scoring"],function(e,t,i){return time=function(){return(new Date).getTime()},zxcvbn=function(n,c=[]){var a,m,s,r,o,u,g,_,f,b,h;for(b=time(),f=[],s=0,r=c.length;s<r;s++)"string"!=(g=typeof(a=c[s]))&&"number"!==g&&"boolean"!==g||f.push(a.toString().toLowerCase());for(u in matching.set_user_input_dictionary(f),o=matching.omnimatch(n),(_=i.most_guessable_match_sequence(n,o)).calc_time=time()-b,m=e.estimate_attack_times(_.guesses))h=m[u],_[u]=h;return _.feedback=t.get_feedback(_.score,_.sequence),_}});
+define(["./time_estimates","./feedback","./scoring","./matching"],function(e,t,n,i){var s;return s=function(){return(new Date).getTime()},function(a,r=[]){var c,o,u,m,_,f,g,b,d,h,k;for(h=s(),d=[],u=0,m=r.length;u<m;u++)"string"!=(g=typeof(c=r[u]))&&"number"!==g&&"boolean"!==g||d.push(c.toString().toLowerCase());for(f in i.set_user_input_dictionary(d),_=i.omnimatch(a),(b=n.most_guessable_match_sequence(a,_)).calc_time=s()-h,o=e.estimate_attack_times(b.guesses))k=o[f],b[f]=k;return b.feedback=t.get_feedback(b.score,b.sequence),b}});
 //# sourceMappingURL=sourcemaps/main.js.map

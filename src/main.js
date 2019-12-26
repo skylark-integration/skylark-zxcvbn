@@ -1,12 +1,10 @@
-  var feedback, matching, scoring, time, time_estimates, zxcvbn;
-
-  matching = require('./matching');
-
 define([
   './time_estimates',
   './feedback',
-  './scoring'
-],function(time_estimates,feedback,scoring){
+  './scoring',
+  './matching'
+],function(time_estimates,feedback,scoring,matching){
+  var time, time_estimates, zxcvbn;
 
   time = function() {
     return (new Date()).getTime();
